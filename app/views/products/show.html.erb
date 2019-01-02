@@ -1,0 +1,72 @@
+<% provide :title, @product.name %>
+<div class="container">
+  <div class="card">
+    <div class="container-fluid">
+      <div class="wrapper row">
+        <div class="preview col-md-5">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1">
+              <% if @product.images.blank? %>
+                <%= image_tag "framgia.png" %>
+              <% else %>
+                <%= image_tag @product.images[0].url %>
+              <% end %>
+            </div>
+          </div>
+          <ul class="preview-thumbnail nav nav-tabs">
+          <% @product.images.each do |image| %>
+            <li><a data-target="#pic-1" data-toggle="tab"><%= image_tag image.thumb.url %></a></li>
+          <% end %>
+          </ul>
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title"><%= @product.name %></h3>
+          <div class="rating">
+            <div class="stars">
+              <% @product.avg_rate.to_i.times do %>
+              <span class="fa fa-star checked"></span>
+              <% end %>
+              <% (Settings.max_point - @product.avg_rate.to_i).times do %>
+              <span class="fa fa-star"></span>
+              <% end %>
+            </div>
+            <%= render "rate_point" %>
+          </div>
+          <h5 class="product-description"><%= @product.description %></h5>
+          <h4 class="price"><%= t ".price_text" %>
+          <span>
+            <%= number_to_currency @product.price %>
+          </span></h4>
+          <h4 class="sizes">
+            <%= t ".inventory_text" %>
+            <%= render "inventory" %>
+          </h4>
+          <p>
+          <%= form_tag carts_path(product_id: @product.id), method: :post,
+            remote: true do %>
+            <div class="pull-left">
+              <h4 class="colors"><%= t ".quantity_text" %></h4>
+              <%= number_field_tag :quantity, Settings.one_value,
+                min: Settings.minimum_value, class: "form-control" %>
+              <%= submit_tag t("add_to_cart"), class: "add-product btn btn-outline-danger" %>
+            </div>
+          <% end %>
+          </p>
+          <div class="action">
+            <%= link_to t(".edit_link"), edit_admin_product_path(@product),
+              class: "edit-product btn btn-outline-danger" if can_edit? %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="rating-panel">
+  <%= render "rates/rate_form" %>
+  <div class="rate-details">
+    <h4 class="review-text"><%= t ".all_reviews_text" %></h4>
+    <div class="all-rates">
+      <%= render @rates %>
+    </div>
+  </div>
+</div>

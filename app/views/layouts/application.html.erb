@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="shortcut icon" href="images/LOGO.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/availability-calendar.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bi.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#navigations').localScroll({
+                duration: 1000
+            });
+        });
+    </script>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+    
+    <script type="text/javascript">
+        $('.sliderwrapper .slider').glide({
+            autoplay: 7000,
+            animationDuration: 3000,
+            arrows: true,
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('.bestdisheswrapper .slider').glide({
+            autoplay: false,
+            animationDuration: 700,
+            arrows: true,
+            navigation: false,
+
+        });
+    </script>
+
+  </body>
+</html>
