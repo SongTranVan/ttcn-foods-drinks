@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180622074730) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "is_delete", default: 0
-    t.string "images"
+    t.string "images", default: "https://i.ibb.co/xHVZgM8/Logo-dhbkdn.jpg"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 

@@ -1,8 +1,11 @@
-<% provide :title, t(".title") %>
-<% provide :button_text, t(".button_text") %>
-<h1><%= t ".hello" %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= render "new_order" %>
+<% provide :title, "Checkout" %>
+<% provide :button_text, "Confirm" %>
+<div class="container">
+<h1 class="text-center" style="color: #474745">Thanks for ordering!</h1>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <%= render "new_order" %>
+    </div>
   </div>
 </div>

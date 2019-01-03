@@ -1,8 +1,8 @@
 <div class="col-12 col-md-6 col-lg-4">
   <div class="product-grid3">
       <div class="product-image3">
-          <%= link_to image_tag("http://www.todayifoundout.com/wp-content/uploads/2014/01/coffee3.jpg"), product,class: "pic-1", alt: t("products.alt_text") %>
-          <%= link_to image_tag("https://epicure.vn/wp-content/uploads/2017/08/huong-vi-cafe-1.jpg"), product,class: "pic-2", alt: t("products.alt_text") %>
+          <%= link_to image_tag(product.images), product,class: "pic-1", alt: t("products.alt_text") %>
+          <%= link_to image_tag(product.images), product,class: "pic-2", alt: t("products.alt_text") %>
           <ul class="social">
             <li>
               <%= button_to "Add to cart", carts_path(product_id: product.id), remote: true, class:"btn btn-outline-warning"%>

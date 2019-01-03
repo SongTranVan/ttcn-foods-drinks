@@ -1,17 +1,22 @@
 <% provide :title, @product.name %>
-<div class="container">
-  <div class="card" style="background-color: #f4f4f4">
+<div class="container" sytle="margin-bottom: 20px">
+  <div class="card">
     <div class="container-fluid">
       <div class="wrapper row">
         <div class="preview col-md-5">
           <div class="preview-pic tab-content">
             <div class="tab-pane active" id="pic-1">
-                <%= image_tag src=@product.images %>
+              <% if @product.images.blank? %>
+                <%= image_tag "framgia.png" %>
+              <% else %>
+                <%= image_tag(@product.images, :size => "400x400") %>
+              <% end %>
             </div>
           </div>
         </div>
-        <div class="details col-md-6">
-          <h3 class="product-title"><%= @product.name %></h3>
+         <div class="preview col-md-1"></div>
+        <div class="details col-md-5">
+          <h3 class="product-title" style="color: #4e594e"><%= @product.name %></h3>
           <div class="rating">
             <div class="stars">
               <% @product.avg_rate.to_i.times do %>
@@ -35,29 +40,34 @@
           <p>
           <%= form_tag carts_path(product_id: @product.id), method: :post,
             remote: true do %>
-            <div>
-              <h4 class="colors"><%= t ".quantity_text" %></h4>
+            <div class="pull-left">
+              <label class="colors"><%= t ".quantity_text" %></label>
               <%= number_field_tag :quantity, Settings.one_value,
-                min: Settings.minimum_value, class: "form-control" %>
-              <%= submit_tag t("add_to_cart"), class: "add-product btn btn-success", style: "margin-top:15px" %>
+                min: Settings.minimum_value, style: "width: 10%;margin-left: 20px;" %>
+                <div class="row" style="margin-top: 15px">
+                  <div class="col-4">
+                    <%= submit_tag t("add_to_cart"), class: "add-product btn btn-success", style:"width: -webkit-fill-available;" %>
+                  </div>
+                  <div class="col-4">
+                    <%= link_to t(".edit_link"), edit_admin_product_path(@product),
+              class: "edit-product btn btn-warning", style:"width: -webkit-fill-available;"  if can_edit? %>
+                  </div>
+                </div>
             </div>
           <% end %>
-          </p>
-          <div class="action">
-            <%= link_to t(".edit_link"), edit_admin_product_path(@product),
-              class: "edit-product btn btn-warning" if can_edit? %>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="rating-panel">
-  <%= render "rates/rate_form" %>
-  <div class="rate-details">
-    <h4 class="review-text"><%= t ".all_reviews_text" %></h4>
-    <div class="all-rates">
-      <%= render @rates %>
+<div class="container">
+    <div class="rating-panel">
+    <%= render "rates/rate_form" %>
+    <div class="rate-details">
+      <h4 class="review-text"><%= t ".all_reviews_text" %></h4>
+      <div class="all-rates">
+        <%= render @rates %>
+      </div>
     </div>
-  </div>
+    </div>
 </div>
