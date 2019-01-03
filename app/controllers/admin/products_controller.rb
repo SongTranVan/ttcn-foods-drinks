@@ -13,7 +13,7 @@ module Admin
     def create
       @product = Product.new product_params
       if @product.save
-        flash[:success] = t ".create.success"
+        flash[:success] = t ".success"
         redirect_to @product
       else
         render :new

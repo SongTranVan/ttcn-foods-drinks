@@ -459,7 +459,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 .card {
   margin-top: 1px;
   background: #eee;
-  padding: 3em;
+  padding: 1em;
   line-height: 1.5em; }
 
 @media screen and (min-width: 997px) {
@@ -821,3 +821,9 @@ color: black;
 }
 
 .pagination a:hover:not(.active) {background-color: rgb(221, 42, 42);}
+
+
+#product_category_id{
+    width: -webkit-fill-available;
+    margin-bottom: 20px;
+}

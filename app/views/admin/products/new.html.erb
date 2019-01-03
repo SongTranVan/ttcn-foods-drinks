@@ -1,35 +1,38 @@
-<% provide :title, t(".title") %>
-<h1><%= I18n.t "admin.products.new.header" %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @product, url: admin_products_path do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
+<% provide :title, "New Product" %>
+<div class="container">
+  <h1 class="text-center" style="margin: 10px">New Product</h1>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col-md-offset-3">
+      <%= form_for @product, url: admin_products_path do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
 
-      <%= f.hidden_field :suggestion_id, value: params[:suggestion_id] %>
+        <%= f.hidden_field :suggestion_id, value: params[:suggestion_id] %>
 
-      <%= f.label :name, I18n.t("products_name") %>
-      <%= f.text_field :name, class: "form-control" %>
+        <%= f.label :name, "Product Name" %>
+        <%= f.text_field :name, class: "form-control" %>
 
-      <%= f.label :description, I18n.t(".admin.products.new.description_lb") %>
-      <%= f.text_field :description, class: "form-control" %>
+        <%= f.label :description, "Description" %>
+        <%= f.text_field :description, class: "form-control" %>
 
-      <%= f.label :price, I18n.t(".price") %>
-      <%= f.number_field :price, class: "form-control" %>
+        <%= f.label :images, "Image URL" %>
+        <%= f.text_field :images, class: "form-control" %>
 
-      <%= f.label :inventory, I18n.t(".quantity") %>
-      <%= f.number_field :inventory, class: "form-control" %>
+        <%= f.label :price, "Price" %>
+        <%= f.number_field :price, class: "form-control" %>
 
-      <%= f.label :product_type, I18n.t(".type") %>
-      <%= f.select :product_type, choose_product_type %>
+        <%= f.label :inventory, "Quantity" %>
+        <%= f.number_field :inventory, class: "form-control" %>
 
-      <%= f.label :category_id, I18n.t(".category") %>
-      <%= f.select :category_id, choose_category_id,
-        {}, {size: Settings.category.list_size} %>
+        <%= f.label :product_type, "Product Type" %>
+        <%= f.select :product_type, choose_product_type %>
 
-      <%= f.label :images, I18n.t(".image") %>
-      <%= f.file_field :images, multiple: true %>
+        <%= f.label :category_id, "Category" %>
+        <%= f.select :category_id, choose_category_id,
+          {}, {size: Settings.category.list_size}%>
 
-      <%= f.submit I18n.t(".create_product"), class: "btn btn-success" %>
-    <% end %>
+        <%= f.submit "Create Product", class: "btn btn-success", style: "width: -webkit-fill-available;margin-top: 20px;"%>
+      <% end %>
+    </div>
   </div>
 </div>

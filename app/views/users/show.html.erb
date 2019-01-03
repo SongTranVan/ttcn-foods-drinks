@@ -2,20 +2,15 @@
 <div class="container">
   <div class="row">
       <div class="col-12">
-          <div class="card">
-
+          <div class="card" style="margin-bottom: 20px; margin-top: 20px;">
               <div class="card-body">
                   <div class="card-title mb-4">
-                      <div class="d-flex justify-content-start">
+                      <div class="">
                           <div class="image-container">
-                              <img src="/assets/LOGO.png" id="imgProfile" style="width: 200px; height: 180px" class="img-thumbnail" />
-                              <div class="middle">
-                                  <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
-                                  <input type="file" style="display: none;" id="profilePicture" name="file" />
-                              </div>
+                              <img src="/assets/LOGO.png" id="imgProfile" style="width: 180px; height: 180px" class="img-thumbnail" />
                           </div>
                           <div class="userData ml-3 text-center">
-                            <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold;text-align: center;"><%= @user.name %></h2>
+                            <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold; color: #72706f"><%= @user.name %></h2>
                           </div>
                       </div>
                   </div>

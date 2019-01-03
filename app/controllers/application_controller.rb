@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def product_params
     params.require(:product).permit :name, :description, :price, :inventory,
-      :product_type, :category_id, images: []
+      :product_type, :category_id, :images
   end
 
   def load_product

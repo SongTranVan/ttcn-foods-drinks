@@ -14,5 +14,5 @@
 
   <%= f.label :password_confirmation, t(".confirm") %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
-  <%= f.submit yield(:button_text), class: "btn btn-success" %>
+  <%= f.submit yield(:button_text), class: "btn btn-success", style: "width: -webkit-fill-available;margin-top: 20px;" %>
 <% end %>
