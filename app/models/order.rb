@@ -20,6 +20,15 @@ class Order < ApplicationRecord
   # def increase_quantity order_product
   #   order_product.quantity += Settings.increase_quantity
   # end
+
+  def send_success_email
+    OrderMailer.order_success(self).deliver_now
+  end
+
+  def send_status_email
+    OrderMailer.order_status(self).deliver_now
+  end
+
   def total_price
     order_products.to_a.sum(&:total)
   end
