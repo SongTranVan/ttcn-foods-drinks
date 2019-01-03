@@ -14,8 +14,8 @@
           <h3 class="title"><b><%= link_to product.name, product, class: "product-name" %></b></h3>
           <div class="row">
               <div class="col-lg-5 price">
-                <%= number_to_currency (product.price + 0.2*product.price) %>
-                <span><%= number_to_currency product.price %></span>
+                <%= number_to_currency product.price %>
+                <span><%= number_to_currency (product.price + 0.2*product.price)%></span>
             </div>
             <div class="col-lg-5 rating" style="display = block">             
                 <% product.avg_rate.to_i.times do %>
