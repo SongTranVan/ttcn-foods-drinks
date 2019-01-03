@@ -12,6 +12,7 @@ module Admin
     def update
       accept_order if params[:status] == Settings.order.status.accepted
       reject_order if params[:status] == Settings.order.status.rejected
+      @order.send_status_email
       respond_to do |format|
         format.html{}
         format.js{}

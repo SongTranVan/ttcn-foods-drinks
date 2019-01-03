@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build order_params
     if @order.save
       clear_cart
+      @order.send_success_email
       flash[:success] = t ".success"
       redirect_to @order
     else
