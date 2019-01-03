@@ -1,32 +1,40 @@
-$(document).ready(function() {
-    var panels = $('.user-infos');
-    var panelsButton = $('.dropdown-user');
-    panels.hide();
+$(document).ready(function () {
+    $imgSrc = $('#imgProfile').attr('src');
+    function readURL(input) {
 
-    //Click dropdown
-    panelsButton.click(function() {
-        //get data-for attribute
-        var dataFor = $(this).attr('data-for');
-        var idFor = $(dataFor);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-        //current button
-        var currentButton = $(this);
-        idFor.slideToggle(400, function() {
-            //Completed slidetoggle
-            if(idFor.is(':visible'))
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
-            }
-            else
-            {
-                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
-            }
-        })
+            reader.onload = function (e) {
+                $('#imgProfile').attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $('#btnChangePicture').on('click', function () {
+        // document.getElementById('profilePicture').click();
+        if (!$('#btnChangePicture').hasClass('changing')) {
+            $('#profilePicture').click();
+        }
+        else {
+            // change
+        }
     });
-    $('[data-toggle="tooltip"]').tooltip();
-
-    $('button').click(function(e) {
-        e.preventDefault();
-        alert(I18n.t("users.show.alert.error"));
+    $('#profilePicture').on('change', function () {
+        readURL(this);
+        $('#btnChangePicture').addClass('changing');
+        $('#btnChangePicture').attr('value', 'Confirm');
+        $('#btnDiscard').removeClass('d-none');
+        // $('#imgProfile').attr('src', '');
+    });
+    $('#btnDiscard').on('click', function () {
+        // if ($('#btnDiscard').hasClass('d-none')) {
+        $('#btnChangePicture').removeClass('changing');
+        $('#btnChangePicture').attr('value', 'Change');
+        $('#btnDiscard').addClass('d-none');
+        $('#imgProfile').attr('src', $imgSrc);
+        $('#profilePicture').val('');
+        // }
     });
 });

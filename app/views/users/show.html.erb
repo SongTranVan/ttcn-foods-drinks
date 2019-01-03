@@ -1,55 +1,84 @@
 <% provide :title, @user.name %>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title text-align-center"><%= @user.name %></h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div align="center">
-              <%= image_tag "logo.jpg", class: "img-circle col-md-3 col-lg-3",
-                alt: t(".user_picture") %>
-            </div>
-            <div class=" col-md-9 col-lg-9 ">
-              <table class="table table-user-information">
-                <tbody>
-                  <tr>
-                    <td><%= t ".name_lb" %></td>
-                    <td><%= @user.name %></td>
-                  </tr>
-                  <tr>
-                    <td><%= t ".email_lb" %></td>
-                    <td><%= @user.email %></td>
-                  </tr>
-                  <tr>
-                    <td><%= t ".address_lb" %></td>
-                    <td><%= @user.address %></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      <div class="col-12">
+          <div class="card">
+
+              <div class="card-body">
+                  <div class="card-title mb-4">
+                      <div class="d-flex justify-content-start">
+                          <div class="image-container">
+                              <img src="/assets/LOGO.png" id="imgProfile" style="width: 200px; height: 180px" class="img-thumbnail" />
+                              <div class="middle">
+                                  <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
+                                  <input type="file" style="display: none;" id="profilePicture" name="file" />
+                              </div>
+                          </div>
+                          <div class="userData ml-3 text-center">
+                            <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold;text-align: center;"><%= @user.name %></h2>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-12">
+                          <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                  <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                              </li>
+                          </ul>
+                          <div class="tab-content ml-1" id="myTabContent">
+                              <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                  <div class="row">
+                                      <div class="col-sm-3 col-md-2 col-5">
+                                          <label style="font-weight:bold;">Full Name:</label>
+                                      </div>
+                                      <div class="col-md-8 col-6" style="color: black; text-align: center">
+                                          <%= @user.name %>
+                                      </div>
+                                  </div>
+                                  <hr />
+
+                                  <div class="row">
+                                      <div class="col-sm-3 col-md-2 col-5">
+                                          <label style="font-weight:bold;">Email:</label>
+                                      </div>
+                                      <div class="col-md-8 col-6" style="color: black; text-align: center">
+                                          <%= @user.email %>
+                                      </div>
+                                  </div>
+                                  <hr />                                                                               
+                                  <div class="row">
+                                      <div class="col-sm-3 col-md-2 col-5">
+                                          <label style="font-weight:bold;">Address:</label>
+                                      </div>
+                                      <div class="col-md-8 col-6" style="color: black; text-align: center">
+                                          <%= @user.address %>
+                                      </div>
+                                  </div>
+                                  <hr />
+                                  <div class="row">
+                                    <% if current_user? @user %>
+                                      <div class="col-sm-3 col-md-2 col-5">
+                                      <%= link_to "Edit Profile", edit_user_path, class: "btn btn-success"%>
+                                      </div>
+                                    <% end %>
+                                    <% if can_delete? @user %>
+                                    <div class="col-sm-3 col-md-2 col-5">
+                                      <%= link_to "Delete", admin_user_path(@user), class: "btn btn-danger", method: :delete, data: { confirm: t("you_sure") } %>
+                                      </div>
+                                    <% end %>
+                                  </div>
+                              </div>
+                              <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                  Facebook, Google, Twitter Account that are connected to this account
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="panel-footer">
-            <span class="pull-right">
-              <% if current_user? @user %>
-                <%= link_to edit_user_path, "data-original-title": t(".edit_user_txt"),
-                  "data-toggle": "tooltip", "type": "button", class: "btn btn-sm btn-warning" do %>
-                  <i class="glyphicon glyphicon-edit"></i>
-                <% end %>
-              <% end %>
-              <% if can_delete? @user %>
-                <%= link_to admin_user_path(@user), "data-original-title": t(".delete_user_txt"),
-                "data-toggle": "tooltip", "type": "button", class: "btn btn-sm btn-danger", method: :delete, data: { confirm: t("you_sure") } do %>
-                  <i class="glyphicon glyphicon-remove"></i>
-                <% end %>
-              <% end %>
-            </span>
-        </div>
       </div>
-    </div>
   </div>
 </div>
 <%= javascript_include_tag "show_user.js" %>
