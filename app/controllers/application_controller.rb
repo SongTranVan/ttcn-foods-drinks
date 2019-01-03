@@ -50,4 +50,11 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "suggestions.not_found_suggestion"
     redirect_to root_path
   end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+    return if @order
+    flash[:warning] = t "orders.not_found_order_msg"
+    redirect_to root_path
+  end
 end
