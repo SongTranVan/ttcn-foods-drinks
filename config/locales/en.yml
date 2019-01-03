@@ -345,6 +345,6 @@ en:
   admin:
     suggestions:
       index:
-        title: "Your suggestion"
-        header: "Your suggestion"
+        title: "Your suggestions"
+        header: "Your suggestions"
 

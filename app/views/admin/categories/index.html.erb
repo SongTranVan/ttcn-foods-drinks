@@ -1,7 +1,7 @@
 <%= provide :title, "All Categories" %>
-<h1>All Categories</h1>
+<h1 class="text-center" style="margin: 10px">All Categories</h1>
 
-<div class="well">
+<div class="container">
   <table class="table">
     <thead>
       <tr>
@@ -21,7 +21,7 @@
         <td></td>
         <td>
           <%= link_to t("categories.new_category_link"), new_admin_category_path,
-            class: "btn btn-outline-danger pull-right" %>
+            class: "btn btn-success pull-right" %>
         </td>
       </tr>
     </tbody>

@@ -2,9 +2,9 @@
   <td><%= suggestion.user.name %></td>
   <td><%= suggestion.product_name %></td>
   <td class="status-color"><%= suggestion.status %></td>
-  <td class="pull-right">
+  <td>
     <%= link_to t("suggestions.details_link"), admin_suggestion_path(suggestion),
-      class: "btn btn-sm btn-outline-danger" %>
+      class: "btn btn-sm btn-outline-success" %>
     <%= link_to t("suggestions.delete_link"), admin_suggestion_path(suggestion),
       method: :delete, data: {confirm: t("you_sure")},
       class: "btn btn-sm btn-outline-danger" %>

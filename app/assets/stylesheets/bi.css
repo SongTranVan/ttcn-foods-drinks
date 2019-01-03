@@ -821,3 +821,9 @@ color: black;
 }
 
 .pagination a:hover:not(.active) {background-color: rgb(221, 42, 42);}
+
+
+#product_category_id{
+    width: -webkit-fill-available;
+    margin-bottom: 20px;
+}

@@ -13,5 +13,5 @@
   <%= f.label :product_type, t("suggestions.product_type_lb") %>
   <%= f.text_field :product_type, class: "form-control" %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-outline-danger" %>
+  <%= f.submit yield(:button_text), class: "btn btn-danger", style: "width: -webkit-fill-available;margin-top: 25px;"%>
 <% end %>
