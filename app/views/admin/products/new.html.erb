@@ -15,6 +15,9 @@
         <%= f.label :description, "Description" %>
         <%= f.text_field :description, class: "form-control" %>
 
+        <%= f.label :images, "Image URL" %>
+        <%= f.text_field :images, class: "form-control" %>
+
         <%= f.label :price, "Price" %>
         <%= f.number_field :price, class: "form-control" %>
 
@@ -27,9 +30,6 @@
         <%= f.label :category_id, "Category" %>
         <%= f.select :category_id, choose_category_id,
           {}, {size: Settings.category.list_size}%>
-
-        <%= f.label :images, "Image" %>
-        <%= f.file_field :images, multiple: true %>
 
         <%= f.submit "Create Product", class: "btn btn-success", style: "width: -webkit-fill-available;margin-top: 20px;"%>
       <% end %>
