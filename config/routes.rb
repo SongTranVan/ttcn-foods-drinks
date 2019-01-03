@@ -33,5 +33,6 @@ Rails.application.routes.draw do
     resources :users, only: :destroy
     resources :suggestions, except: %i(new create)
     resources :categories
+    resources :orders, only: %i(index edit update)
   end
 end
