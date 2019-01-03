@@ -48,7 +48,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.3,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/BZtH15r/banhmi.jpg"
 )
 
 Product.create!(
@@ -58,7 +59,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.8,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/WGv3Kmv/banhtrangcuonthitheo.jpg"
 )
 
 Product.create!(
@@ -68,7 +70,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 3.5,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/QKSCktV/banhtrangkep.jpg"
 )
 
 Product.create!(
@@ -78,7 +81,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 3.9,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/YpykrjM/bundau.jpg"
 )
 
 Product.create!(
@@ -88,7 +92,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 3.2,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/dL3CnpW/chaoech.jpg"
 )
 
 Product.create!(
@@ -98,7 +103,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 3.3,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/jMFwbZ8/chethaiphien.jpg"
 )
 
 Product.create!(
@@ -108,7 +114,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.9,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/WsFNSw8/comga.jpg"
 )
 
 Product.create!(
@@ -118,7 +125,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.8,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/0mpLQh8/garan-kfc.jpg"
 )
 
 Product.create!(
@@ -128,7 +136,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.6,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/g7wCDPX/kingcastella-banhbonglan.jpg"
 )
 
 Product.create!(
@@ -138,7 +147,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.9,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/XZPpXm6/miquangtran.jpg"
 )
 
 Product.create!(
@@ -148,7 +158,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 4.3,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/f1zv4wC/napom-bakery.jpg"
 )
 
 Product.create!(
@@ -158,7 +169,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 5,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/F5SNhgg/ramcuoncai.jpg"
 )
 
 Product.create!(
@@ -168,7 +180,8 @@ Product.create!(
   inventory: 10,
   product_type: "food",
   avg_rate: 2.5,
-  category_id: 1
+  category_id: 1,
+  images: "https://i.ibb.co/9GgSyZh/sushi.jpg"
 )
 
 Product.create!(
@@ -178,7 +191,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/qWm8MbR/cafesaigon-coffee.jpg"
 )
 
 Product.create!(
@@ -188,7 +202,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/y83W9L2/chiachia-trabidao.jpg"
 )
 
 Product.create!(
@@ -198,7 +213,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 3.1,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/HtSp0Dp/daisy-sinhto.jpg"
 )
 
 Product.create!(
@@ -208,7 +224,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.6,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/Ht9HyKj/dingtea-trasua.jpg"
 )
 
 Product.create!(
@@ -218,7 +235,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.7,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/QdVK0g1/freeman-tradao.jpg"
 )
 
 Product.create!(
@@ -228,7 +246,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.3,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/wsbCyJB/gongcha-trasua.jpg"
 )
 
 Product.create!(
@@ -238,7 +257,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.6,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/YXVLQs8/honeypea-tradao.jpg"
 )
 
 Product.create!(
@@ -248,7 +268,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.9,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/2SdKRgn/huycafe-coffee.jpg"
 )
 
 Product.create!(
@@ -258,7 +279,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 3.1,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/LkfKTsq/phodo-coffee.jpg"
 )
 
 Product.create!(
@@ -268,7 +290,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.8,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/k9MPN9j/phuclong-coffee.jpg"
 )
 
 Product.create!(
@@ -278,7 +301,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 4.1,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/KWsCHhs/royaltea-trasua.jpg"
 )
 
 Product.create!(
@@ -288,7 +312,8 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 3.1,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/z5R4w1b/sinhto.jpg"
 )
 
 Product.create!(
@@ -298,5 +323,6 @@ Product.create!(
   inventory: 10,
   product_type: "drink",
   avg_rate: 5,
-  category_id: 2
+  category_id: 2,
+  images: "https://i.ibb.co/vjScCT7/tocotoco-trasua.jpg"
 )

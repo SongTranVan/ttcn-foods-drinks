@@ -6,18 +6,9 @@
         <div class="preview col-md-5">
           <div class="preview-pic tab-content">
             <div class="tab-pane active" id="pic-1">
-              <% if @product.images.blank? %>
-                <%= image_tag "framgia.png" %>
-              <% else %>
-                <%= image_tag @product.images[0].url %>
-              <% end %>
+                <%= image_tag src=@product.images %>
             </div>
           </div>
-          <ul class="preview-thumbnail nav nav-tabs">
-          <% @product.images.each do |image| %>
-            <li><a data-target="#pic-1" data-toggle="tab"><%= image_tag image.thumb.url %></a></li>
-          <% end %>
-          </ul>
         </div>
         <div class="details col-md-6">
           <h3 class="product-title"><%= @product.name %></h3>

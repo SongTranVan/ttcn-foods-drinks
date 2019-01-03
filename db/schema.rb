@@ -41,8 +41,21 @@ ActiveRecord::Schema.define(version: 20180622074730) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-# Could not dump table "products" because of following StandardError
-#   Unknown type 'json' for column 'images'
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.float "price"
+    t.integer "inventory"
+    t.integer "product_type", default: 0
+    t.float "avg_rate", default: 5.0
+    t.integer "count_rate", default: 1
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "is_delete", default: 0
+    t.string "images"
+    t.index ["category_id"], name: "index_products_on_category_id"
+  end
 
   create_table "rates", force: :cascade do |t|
     t.integer "point"
