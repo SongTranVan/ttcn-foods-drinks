@@ -14,10 +14,10 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build order_params
     if @order.save
       clear_cart
-      flash[:success] = t ".success"
+      flash[:success] = "Your Order has been created! Thanks you!"
       redirect_to @order
     else
-      flash[:danger] = t ".danger"
+      flash[:danger] = "Order not found!"
       redirect_to root_path
     end
   end

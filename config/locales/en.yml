@@ -66,7 +66,7 @@ en:
   static_pages:
     home:
       title: "Home"
-      header1: "Framgia Foods and Drinks"
+      header1: "Rooftop Foods and Drinks"
       header2: "Fresh Taste at a Great Price"
       signup_link: "Sign up now!"
     help:
@@ -202,7 +202,7 @@ en:
   user_mailer:
     account_activation:
       subject: "Account activation"
-      header: "Framgia Foods & Drinks"
+      header: "Rooftop Foods & Drinks"
       content1: "Hi %{user_name}"
       content2: "Thanks for your signed up! Click on the link below to activate your account:"
       link: "Activate"

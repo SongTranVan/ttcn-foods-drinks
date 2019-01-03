@@ -1,13 +1,14 @@
 <%= provide :title, t(".title") %>
-<h1><%= t ".header" %></h1>
-<div class="well">
+
+<div class="container" style="margin-bottom:320px">
+  <h1 class="text-center" style="margin-top: 20px;">All Orders</h1>
   <table class="table">
     <thead>
       <tr>
         <th><%= t ".user_name_text" %></th>
         <th><%= t ".user_email_text" %></th>
         <th><%= t ".user_address_text" %></th>
-        <th></th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>

@@ -1,24 +1,23 @@
 <%= provide :title, t(".title") %>
-<h1><%= t ".header" %></h1>
-<div class="current-order">
-  <%= render "order_info" %>
-</div>
-<div class="well">
-  <table class="table">
+
+<div class="container">
+  <h1  style="margin: 25px 0 10px 0" class="text-center">Your Order</h1>
+  <div class="current-order">
+    <%= render "order_info" %>
+  </div>
+  <table class="table"  style="margin: 25px 0 10px 0">
     <thead>
       <tr>
-        <th class="text-center"><%= t ".product_name_text" %></th>
-        <th class="text-center"><%= t ".product_quantity_text" %></th>
-        <th class="text-center"><%= t ".product_unit_price_text" %></th>
-        <th class="text-center"><%= t ".product_total_text" %></th>
+        <th width=50% class="text-center"><%= t ".product_name_text" %></th>
+        <th width=10% class="text-center"><%= t ".product_quantity_text" %></th>
+        <th width=20% class="text-center"><%= t ".product_unit_price_text" %></th>
+        <th width=20% class="text-right"><%= t ".product_total" %></th>
       </tr>
     </thead>
     <tbody>
       <%= render partial: "item", collection: @order.order_products %>
       <tr>
-        <td><h3><%= t ".total_price" %></h3></td>
-        <td></td>
-        <td></td>
+        <td colspan=3 class="text-right"><h3><%= t ".total_price" %></h3></td>
         <td class="text-right"><h3><strong><%= number_to_currency @order.total_price %></strong></h3></td>
       </tr>
     </tbody>

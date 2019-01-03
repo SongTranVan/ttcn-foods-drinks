@@ -2,7 +2,7 @@
   <td class="">
     <div class="media">
       <a class="thumbnail pull-left" href="#">
-        <%= image_tag "framgia.png", class: "media-object  img-circle", style:"max-height: 50px;max-width: 50px;margin-right: 20px;" %>
+        <%= link_to image_tag(item.images, :size => "50x50"),product_path(item), class: "media-object  img-circle", style:"max-height: 50px;max-width: 50px;margin-right: 20px;" %>
       </a>
       <div class="media-body">
         <h4 class="media-heading">

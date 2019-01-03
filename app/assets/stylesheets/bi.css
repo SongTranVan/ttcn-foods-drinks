@@ -399,10 +399,10 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
     text-align: center;
 }
 .card-body img {
-    width: 195px;
-    height: 155px;
+    width: 220px;
+    height: 220px;
     padding-left: -1px;
-    margin-left: -34px;
+    margin-left: -30px;
 }
 .card-header {
     background: brown;
@@ -519,7 +519,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
   padding: 1.2em 1.5em;
   border: none;
   text-transform: UPPERCASE;
-  font-weight: bold;
+  font-weight: bold;227px
   color: #fff;
   -webkit-transition: background .3s ease;
           transition: background .3s ease; }
@@ -593,7 +593,7 @@ padding : 50px 0;
     width: 100%;
 }
 .btn-login{
-    margin-top: 15px;
+    margin-top: 15px;227px
     margin-bottom: 5px;
 }
 .copy-text{
@@ -643,7 +643,7 @@ padding : 50px 0;
     width: 70%;
     padding: 2%;
     font-weight: 600;
-    color: #6c757d;
+    color: #6c757d;227px
     cursor: pointer;
 }
 .proile-rating{
@@ -719,7 +719,7 @@ padding : 50px 0;
 .profile-img .file input {
     position: absolute;
     opacity: 0;
-    right: 0;
+    right: 0;227px
     top: 0;
 }
 .profile-head h5{
@@ -797,7 +797,7 @@ padding : 50px 0;
     color: white;
     float: left;
 }
-
+227px
 .pagination li.active {
     background-color: rgb(197, 12, 21);
     color: white;
@@ -827,3 +827,8 @@ color: black;
     width: -webkit-fill-available;
     margin-bottom: 20px;
 }
+#hotDrinks{
+    width: 226px;
+    height: 225px;
+    data-wow-delay:.8s;
+}227px
