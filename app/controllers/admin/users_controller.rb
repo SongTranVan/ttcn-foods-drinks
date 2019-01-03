@@ -4,7 +4,7 @@ module Admin
 
     def destroy
       status = @user.deleted! ? :success : :warning
-      flash[status] = t ".destroy.#{status}"
+      flash[status] = "User has ben deleted!"
       redirect_to root_path
     end
   end

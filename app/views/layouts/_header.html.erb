@@ -5,7 +5,7 @@
                 <div class="col menu-left">
                     <%= link_to "HOME", root_path %>
                     <%= link_to "ORDER NOW", products_path %>
-                    <%= link_to "FOOD", products_path(category_id: 1) %>
+                    <%= link_to "FOOD", products_path(category_id: 1)%>
                     <%= link_to "DRINK", products_path(category_id: 2) %>
                 </div>
                 <div class="col-3 logo">
@@ -42,7 +42,7 @@
                             <% else %>
                                 <li class="nav-item">
                                     <%= link_to login_path, class: "nav-link" do%>
-                                    <i class="fa fa-sign-in"></i>
+                                    <i class="fas fa-sign-in-alt"></i>
                                     <%= t "login_link" %>
                                     <% end %>
                                 </li>
