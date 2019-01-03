@@ -44,3 +44,10 @@ drink: "drink"
 rows: 10
 max_point: 5
 category_max_length: 50
+order:
+  submit:
+    accept: "order_status.value = 1"
+    reject: "order_status.value = 2"
+  status:
+    accepted: "1"
+    rejected: "2"
