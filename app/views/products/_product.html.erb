@@ -19,10 +19,10 @@
             </div>
             <div class="col-lg-5 rating" style="display = block">             
                 <% product.avg_rate.to_i.times do %>
-                  <span class="fa fa-star checked"></span>
+                  <span class="fas fa-star checked" style="font-size: 14px"></span>
                 <% end %>
                 <% (Settings.max_point - (product.avg_rate.to_i)).times do %>
-                  <span class="fa fa-star disabled"></span>
+                  <span class="fas fa-star disabled" style="font-size: 14px"></span>
                 <% end %>
             </div>
           </div>

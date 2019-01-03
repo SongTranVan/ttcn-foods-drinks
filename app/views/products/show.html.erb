@@ -1,6 +1,6 @@
 <% provide :title, @product.name %>
 <div class="container">
-  <div class="card">
+  <div class="card" style="background-color: #f4f4f4">
     <div class="container-fluid">
       <div class="wrapper row">
         <div class="preview col-md-5">
@@ -24,10 +24,10 @@
           <div class="rating">
             <div class="stars">
               <% @product.avg_rate.to_i.times do %>
-              <span class="fa fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
               <% end %>
               <% (Settings.max_point - @product.avg_rate.to_i).times do %>
-              <span class="fa fa-star"></span>
+              <span class="fas fa-star"></span>
               <% end %>
             </div>
             <%= render "rate_point" %>
@@ -44,17 +44,17 @@
           <p>
           <%= form_tag carts_path(product_id: @product.id), method: :post,
             remote: true do %>
-            <div class="pull-left">
+            <div>
               <h4 class="colors"><%= t ".quantity_text" %></h4>
               <%= number_field_tag :quantity, Settings.one_value,
                 min: Settings.minimum_value, class: "form-control" %>
-              <%= submit_tag t("add_to_cart"), class: "add-product btn btn-outline-danger" %>
+              <%= submit_tag t("add_to_cart"), class: "add-product btn btn-success", style: "margin-top:15px" %>
             </div>
           <% end %>
           </p>
           <div class="action">
             <%= link_to t(".edit_link"), edit_admin_product_path(@product),
-              class: "edit-product btn btn-outline-danger" if can_edit? %>
+              class: "edit-product btn btn-warning" if can_edit? %>
           </div>
         </div>
       </div>
